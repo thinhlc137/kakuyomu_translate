@@ -12,7 +12,7 @@ Tool tự động cào (crawl), dịch thuật ngữ cảnh cao cấp bằng **G
 - **Semantic Masking (Chống chặn nội dung)**: Tự động xử lý các từ khóa nhạy cảm học đường để tránh kích hoạt nhầm bộ lọc an toàn của Google.
 - **Cơ chế Model Pool & Auto-Fallback**:
   - Tự động luân chuyển model khi gặp giới hạn hạn mức (Rate Limit / Quota).
-  - Tự động kích hoạt Fallback Translator khi gặp phân cảnh 18+ bị AI từ chối, đảm bảo không bị sót bất kỳ chương nào.
+  - Tự động kích hoạt Fallback Translator khi bị AI từ chối, đảm bảo không bị sót bất kỳ chương nào.
 - **Tính năng Resume**: Tự động nhận diện các chương đã dịch sẵn để nạp tiếp mà không tốn thêm quota.
 - **Xuất file chuẩn**: Tự động lưu từng chương thành file `.md` và đóng gói toàn bộ tác phẩm thành file `.epub` có mục lục chuẩn.
 
@@ -51,11 +51,11 @@ pip install -r requirements.txt
    ```
 
 2. **(Tùy chọn) Cấu hình System Prompt riêng**:
-   - Nếu muốn dùng văn phong, quy tắc dịch hoặc quy định xưng hô riêng mà **không bị lộ lên GitHub**, bạn chỉ cần tạo/chỉnh sửa file:
+   - Nếu muốn dùng văn phong, quy tắc dịch hoặc quy định xưng hô riêng, bạn chỉ cần tạo/chỉnh sửa file:
      ```bash
      cp system_prompt.example.txt system_prompt.txt
      ```
-   - Chỉnh sửa nội dung prompt trong `system_prompt.txt`. File này đã được `.gitignore` bảo vệ tuyệt đối.
+   - Chỉnh sửa nội dung prompt trong `system_prompt.txt`.
    - Khi chạy, tool sẽ tự động ưu tiên nạp nội dung từ `system_prompt.txt`.
 
 ### 3. Chạy chương trình
