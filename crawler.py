@@ -1,3 +1,4 @@
+import re
 import httpx
 from bs4 import BeautifulSoup
 
@@ -8,7 +9,12 @@ HEADERS = {
 
 def get_novel_info(work_id: str):
     """Lấy tiêu đề tác phẩm và danh sách link toàn bộ các chương."""
-    work_id = work_id.strip().rstrip("/").split("/")[-1]
+    # Tự động nhận diện Work ID từ URL bất kỳ (works/<ID> hoặc /works/<ID>/episodes/...)
+    match = re.search(r'/works/(\d+)', work_id)
+    if match:
+        work_id = match.group(1)
+    else:
+        work_id = work_id.strip().rstrip("/").split("/")[-1]
     
     url = f"https://kakuyomu.jp/works/{work_id}"
     res = httpx.get(url, headers=HEADERS, timeout=15, follow_redirects=True)

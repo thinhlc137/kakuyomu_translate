@@ -1,3 +1,9 @@
+import sys
+# Đảm bảo in tiếng Việt và tiếng Nhật không bị lỗi mã hóa trên console Windows
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
 import time
 import os
 import re
