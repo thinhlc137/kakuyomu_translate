@@ -71,9 +71,9 @@ Nhập ID tác phẩm (chuỗi số trong URL `https://kakuyomu.jp/works/<WORK_I
 ## Cấu trúc thư mục
 
 ```text
-├── .env                     # Chứa API Key cá nhân (được gitignore bảo vệ, không đẩy lên Git)
+├── .env                     # Chứa API Key cá nhân 
 ├── .env.example             # File mẫu cấu hình biến môi trường
-├── system_prompt.txt        # System Prompt riêng của bạn (được gitignore bảo vệ, không đẩy lên Git)
+├── system_prompt.txt        # System Prompt riêng của bạn
 ├── system_prompt.example.txt# File mẫu System Prompt công khai trên Git
 ├── .gitignore               # Danh sách file và thư mục loại trừ khỏi Git
 ├── config.py                # Cấu hình nạp key, model, prompt tự động và glossary
